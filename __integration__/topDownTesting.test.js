@@ -20,11 +20,12 @@ jest.mock('../modules/getNextDate'.getNextDate, () => ({
 
 
 // Stub function for getPreviousDate
-// jest.mock('../modules/getPreviousDate'.getPreviousDate, () => ({
+jest.mock('../modules/getPreviousDate', () => ({
+  getPreviousDate: jest.fn().mockImplementation((month, day, year) => {
+    return { month: 4, day: 16, year: 2024 }; // Mocked output for 4/16/2024
+  })
+}));
 // ..
-
-
-
 
 // Stub function for getDayOfWeek
 jest.mock('../modules/getDayOfWeek'.getDayOfWeek, () => ({
